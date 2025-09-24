@@ -1,14 +1,16 @@
 <html>
     <head>
         <title>Portfolio</title>
+             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     </head>
 
     <body style="background-color: rgb(0, 0, 0); text-decoration-color: aliceblue;">
 
     <div style="background-color: rgb(53, 53, 53); display: flex;
-     justify-content: space-between; border-left: 1px solid rgb(53, 53, 53); border-radius: 50px ;" > 
+     justify-content: space-between; border-right: 1px solid rgb(53, 53, 53); border-radius: 50px ;" > 
         <a style="display: flex;"><img src="mjlogo.webp" 
-            height="110px" width="110px" style="border: 1px solid black ; border-radius: 100px;">
+            height="110px" width="110px" style="border: 1px solid black ;  border-radius:50px;">
         <div id="navbar">
         <a id="n1" href="index.html">    <p>Home</p></a>
         <a id="n1" href="projects.html"> <p>Projects</p></a>
@@ -20,19 +22,53 @@
 
     <style>
        form{
+        height: 350px;
+        width: 350px;
         padding: 25px;
+        transition: .4s ease-in-out;
+        margin-top: 5%;
+        font-size: larger;
+       }
+
+       form:hover{
+        transform: scale(1.02);
+        border: 1px solid green;
        }
         input{
-            font-size: large;
-            border: #4f4f50 solid 2px;
-            border-radius:4px;
-            float: right;
-            margin-right: 50px;
-        
+             display: flex;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: rgb(164, 125, 255);
+  background-color: rgb(53, 53, 53);
+  box-shadow: inset 2px 5px 5px rgb(5, 5, 5);
+  padding-left:15px;
+        }
+        textarea{
+             display: flex;
+  border-radius: 25px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  color: rgb(164, 125, 255);
+  background-color: rgb(53, 53, 53);
+  box-shadow: inset 2px 5px 5px rgb(5, 5, 5);
         }
 
-        #input:hover{
-        border-color:  rgb(239, 149, 149);
+        #inp1:hover{
+        background-color:  #f1f5f9;
+        transition-duration: 0.5s;
+        }
+        #inp2:hover{
+        background-color:  #f1f5f9;
+        transition-duration: 0.5s;
+        }
+        #inp3:hover{
+        background-color:  #f1f5f9;
+        transition-duration: 0.5s;
+        }
+        #inp4:hover{
         background-color:  #f1f5f9;
         transition-duration: 0.5s;
         }
@@ -42,22 +78,25 @@
         button{
             
             background-color: rgb(53, 53, 53);
-            font-size: 25px;
-            border-radius: 5px;
+            font-size: 20px;
+            border-radius: 10px;
             justify-content: space-between;
-            padding-right: 25px;
+            padding:10px 20px 10px 20px;
             color: #f1f5f9;
-            height: 50px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             margin-top: 10px;
+            margin-right: 10px;
+            box-shadow: inset 2px 5px 5px rgb(5, 5, 5);
+
         }
 
-    button:hover{
-        color:  rgb(54, 51, 51);
+    #su:hover{
+        color:  rgb(0, 0, 0);
         background-color:  #f1f5f9;
         transition-duration: 0.5s;
     }
 
+    
     
  #navbar{
     display: flex;
@@ -71,7 +110,7 @@
     text-decoration: none;
     padding-right: 20px;
     font-size: 30px;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 
@@ -82,36 +121,48 @@
     outline-color: #ffffff;
 }
         
+
+
+
     </style>
 
 
 
-    <div style="margin-top: 5%; margin-left: 25%; margin-right: 25%;font-size: larger;">
+    <div >
         <center>
-        <form style="background-color: #f1f5f9; color: #141618; border-radius: 25px;" >
-            <h1 style="border: #141618 2px solid; border-radius: 15px;">Contact Us</h1>
-            <label>Name:<label>
-            <input type="text" placeholder= "Name" class="inp" required><br><br>
-            <label>Mobile No: <label>
-            <input type="tel" placeholder="Mobile No." class="inp" required><br><br>
+        <form style="background-color: #f1f5f9; color: #141618; border-radius: 25px;"
+        action="https://api.web3forms.com/submit" method="POST" >
+           
+        <h1 style="border: #141618 2px solid; border-radius: 15px;">Contact Us</h1>
+        <a style="color: red; display: flex; opacity: 50%;"> ! Coution this form works</a>   
+        <div>
+                <input type="hidden" name="access_key" value="a052df6f-825a-41c2-bf87-f7b68d98d594">
+            <a style="display: flex; justify-content: center; align-items: center;"><i class='bx  bxs-user-circle'  ></i> 
+            <input type="text" name="name" placeholder= "Name" id="inp1" required><br><br>
+            </a>
 
-            <label>Email : <label>
-            <input type="email" placeholder="Email" class="inp" required><br><br>
+            <a style="display: flex; align-items: center; justify-content: center;">  <i class='bx  bx-phone'  ></i>
+            <input type="tel" name="Mobile" placeholder="Tel No. 10 Digits" id="inp2" required pattern="[0-9]{10}" maxlength="10"><br><br>
+            </a>
+            
+            <a style="display: flex; align-items: center; justify-content: center;">
+                <i class='bx  bx-envelope'  ></i> 
+            <input type="email" name="email" placeholder="Email" id="inp3" required><br><br>
+            </a>
+           
+            <a style="display: flex; align-items: center; justify-content: center;">
+                <i class='bx  bxs-message' style="color: #141618;" ></i> 
+                
 
-            <label>Password : <label>
-            <input type="password" placeholder="Password" class="inp" required><br><br>
-
-
-            <button>SIGN UP</button>
-            <button>LOGIN</button>
+                <textarea name="input" id="inp4" rows="2" cols="21" placeholder="Message" required style="border-radius: 15px;"></textarea>
+           <!--<input type="text" placeholder="Message" id="inp4"> -->
+            </a>
+            </div>
+            <button id="su" type="submit">Submit</button></a>
         </form>
         </center>
     </div>
 
 
-
-
-
- 
     </body>
 </html>
